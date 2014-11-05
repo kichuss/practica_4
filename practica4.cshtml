@@ -1,0 +1,36 @@
+﻿/*
+ * Created by SharpDevelop.
+ * User: Usuario
+ * Date: 04/11/2014
+ * Time: 07:23 p. m.
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
+using System;
+using System.IO;
+
+namespace practica4
+{
+		class MainClass
+	{
+		public static void Main (string[] args)
+		{
+            try
+            {
+                using (StreamReader sr = new StreamReader("D:\\kichus.txt", false))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("El archivo no se puede leer");
+            }
+            Console.ReadKey();
+        }
+    }
+}
